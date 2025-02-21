@@ -1,0 +1,35 @@
+name: Generate Snake
+
+on:
+  schedule: 
+    - cron: "0 0 * * *"  # Gera todo dia à meia-noite
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v2
+
+      - name: Instalar python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Gerar a cobrinha
+        run: |
+          cd .github/workflows
+          python main.py MarcosAMPaes
+          
+      - name: Commit e push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Gerando snake animation"
+          git push
