@@ -16,7 +16,7 @@
 
 Estudante de **Sistemas de Informação**, pesquisador no **LAIR** da Incubadora IFES Cachoeiro e dev na **wisestonetech**. Sempre admirei muito quem trabalhava com tecnologia — acho nobre e bonito — e foi isso que me trouxe pra cá.
 
-Fora do teclado, pratico jiu-jitsu e jogo. Levo pro código a mesma mentalidade do tatame: não aceito ficar travado. Se não sei, aprendo. Se não funciona de um jeito, tento de outro — até funcionar.
+Fora do teclado, pratico jiu-jitsu e jogo alguns jogos competitivos. Levo pra minha profissão minha mentalidade pessoal: não aceito ficar travado. Se não sei, aprendo. Se não funciona de um jeito, tento de outro — até funcionar.
 
 Sou bem aberto a novas conexões, adoro trabalhar em equipe e acredito que código bom nasce de conversa boa. Se quiser trocar ideia, tô por aqui.
 
@@ -52,7 +52,7 @@ Encoder serial (10 bytes) → FSM + lead-time calc → 3× câmeras USB
 
 ---
 
-### 🛒 VVN — E-commerce · wisestonetech
+### 🛒 VVN — E-commerce
 
 API REST para e-commerce completo. Arquitetura em camadas sem ORM (Raw SQL), com integrações reais de pagamento e CI/CD.
 
