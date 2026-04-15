@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="mailto:marcosampaes@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=gmail&logoColor=white" /></a>
-  <a href="https://linkedin.com/in/marcosampaes"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/marcos-ant%C3%B4nio-mendes-paes-0ba4162ba/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
   <img src="https://komarev.com/ghpvc/?username=MarcosAMPaes&style=flat-square&color=42F7F3&label=visits" />
 </p>
 
@@ -14,9 +14,11 @@
 
 <img align="right" width="320" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
 
-Estudante de **Sistemas de Informação** e pesquisador no **LAIR** (Laboratório de IA e Robótica) da Incubadora IFES Cachoeiro, onde desenvolvo soluções reais em visão computacional, IoT e desenvolvimento web — como pesquisador associado à **wisestonetech**.
+Estudante de **Sistemas de Informação**, pesquisador no **LAIR** da Incubadora IFES Cachoeiro e dev na **wisestonetech**. Sempre admirei muito quem trabalhava com tecnologia — acho nobre e bonito — e foi isso que me trouxe pra cá.
 
-Gosto de trabalhar em sistemas que cruzam camadas: do protocolo serial de um encoder industrial até um pipeline de segmentação com IA rodando 100% no edge. No web, cuido do backend e do frontend — da API assíncrona ao dashboard em tempo real.
+Fora do teclado, pratico jiu-jitsu e jogo. Levo pro código a mesma mentalidade do tatame: não aceito ficar travado. Se não sei, aprendo. Se não funciona de um jeito, tento de outro — até funcionar.
+
+Sou bem aberto a novas conexões, adoro trabalhar em equipe e acredito que código bom nasce de conversa boa. Se quiser trocar ideia, tô por aqui.
 
 <br clear="right"/>
 
