@@ -1,35 +1,24 @@
-name: Generate Snake
+name: Generate Snake Animation
 
 on:
-  schedule: 
-    - cron: "0 0 * * *"  # Gera todo dia à meia-noite
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Clonar repositório
-        uses: actions/checkout@v2
-
-      - name: Instalar python
-        uses: actions/setup-python@v2
+      - uses: Platane/snk/svg-only@v3
         with:
-          python-version: 3.x
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Instalar dependências
-        run: pip install requests
-
-      - name: Gerar a cobrinha
-        run: |
-          cd .github/workflows
-          python main.py MarcosAMPaes
-          
-      - name: Commit e push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Gerando snake animation"
-          git push
+      - uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
