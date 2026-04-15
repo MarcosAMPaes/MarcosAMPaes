@@ -52,7 +52,7 @@ Encoder serial (10 bytes) → FSM + lead-time calc → 3× câmeras USB
 
 ---
 
-### 🛒 VVN — E-commerce
+### 🛒 VVN — E-commerce · wisestonetech
 
 API REST para e-commerce completo. Arquitetura em camadas sem ORM (Raw SQL), com integrações reais de pagamento e CI/CD.
 
@@ -115,11 +115,8 @@ Pipeline de visão computacional em Raspberry Pi para linha de produção indust
 ## Stats
 
 <div align="center">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=MarcosAMPaes&show_icons=true&theme=dracula&hide_border=true&count_private=true" />
   <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MarcosAMPaes&layout=compact&langs_count=8&theme=dracula&hide_border=true" />
-</div>
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=MarcosAMPaes&theme=dracula&hide_border=true" />
+  <img height="160em" src="https://streak-stats.demolab.com?user=MarcosAMPaes&theme=dracula&hide_border=true" />
 </div>
 
 ---
