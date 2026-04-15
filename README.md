@@ -52,7 +52,7 @@ Encoder serial (10 bytes) → FSM + lead-time calc → 3× câmeras USB
 
 ---
 
-### 🛒 VVN — E-commerce · wisestonetech
+### 🛒 VVN — E-commerce
 
 API REST para e-commerce completo. Arquitetura em camadas sem ORM (Raw SQL), com integrações reais de pagamento e CI/CD.
 
