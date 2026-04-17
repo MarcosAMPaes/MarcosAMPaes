@@ -7,7 +7,7 @@
 <p align="center">
   <a href="mailto:marcosampaes@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=gmail&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/marcos-ant%C3%B4nio-mendes-paes-0ba4162ba/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
-  <img src="https://komarev.com/ghpvc/?username=MarcosAMPaes&style=flat-square&color=42F7F3&label=visits" />
+  <img src="https://komarev.com/ghpvc/?username=MarcosAMPaes&style=flat-square&color=8a42f7&label=visits" />
 </p>
 
 ---
