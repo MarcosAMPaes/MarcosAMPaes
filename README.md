@@ -1,7 +1,5 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Marcos%20Paes&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=36&desc=LAIR%20%E2%80%A2%20Incubadora%20IFES%20Cachoeiro%20%7C%20wisestonetech&descAlignY=56&descSize=15" width="100%" />
-
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&duration=2600&pause=800&color=42F7F3&center=true&vCenter=true&width=680&lines=Visao+Computacional+%2B+ML+%2B+IoT+%2B+Full+Stack;Pipeline+edge%3A+SAM3+%2B+OpenCV+%2B+Hugin+%2B+MQTT;FastAPI+%2B+React+%2B+TypeScript+%2B+Docker+%2B+Jenkins;Sistemas+que+saem+do+papel+e+vao+pra+producao" />
+  <img src="./marcos-terminal.svg" alt="Marcos Paes: retrato em ASCII e resumo estilo neofetch" width="100%" />
 </p>
 
 <p align="center">
