@@ -5,129 +5,94 @@
 <p align="center">
   <a href="mailto:marcosampaes@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=gmail&logoColor=white" /></a>
   <a href="https://www.linkedin.com/in/marcos-ant%C3%B4nio-mendes-paes-0ba4162ba/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
-  <img src="https://komarev.com/ghpvc/?username=MarcosAMPaes&style=flat-square&color=8a42f7&label=visits" />
 </p>
 
 ---
 
-<img align="right" width="320" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
+## Sobre
 
-Estudante de **Sistemas de Informação**, pesquisador no **LAIR** da Incubadora IFES Cachoeiro e dev na **wisestonetech**. Sempre admirei muito quem trabalhava com tecnologia — acho nobre e bonito — e foi isso que me trouxe pra cá.
+Sou estudante de **Sistemas de Informação no Ifes**, campus Cachoeiro de Itapemirim, e pesquisador bolsista da FAPES no **LAIR** (Laboratório de IA e Robótica). Trabalho com visão computacional, otimização e IoT aplicados à indústria de rochas ornamentais, e gosto de levar o que nasce na pesquisa para sistemas que rodam em produção.
 
-Fora do teclado, pratico jiu-jitsu e jogo alguns jogos competitivos. Levo pra minha profissão minha mentalidade pessoal: não aceito ficar travado. Se não sei, aprendo. Se não funciona de um jeito, tento de outro — até funcionar.
+Também sou sócio-fundador da **Wisestone Tech** e fundador da **Petra Smart**, startup que saiu do Programa Gênesis FAPES.
 
-Sou bem aberto a novas conexões, adoro trabalhar em equipe e acredito que código bom nasce de conversa boa. Se quiser trocar ideia, tô por aqui.
+Sempre admirei quem trabalha com tecnologia, e foi isso que me trouxe até aqui. Levo para o trabalho a mesma postura que tenho fora dele: se não sei, aprendo; se não funciona de um jeito, tento de outro até funcionar. Fora do teclado, pratico jiu-jitsu e jogo alguns jogos competitivos.
 
-<br clear="right"/>
+Gosto de trabalhar em equipe e estou sempre aberto a novas conexões.
 
 ---
 
 ## Projetos
 
-### 🔬 Pipeline de Estúdio Fotográfico · wisestonetech + LAIR
+### Petra Smart · Mosaicos a partir de retalhos de rocha
 
-Sistema modular para automação de captura panorâmica profissional com 3 câmeras. Tudo no edge, sem nuvem.
+Startup de IA que transforma retalhos de rochas ornamentais em mosaicos, reduzindo o descarte do setor. O sistema vai da foto ao arranjo final: captura calibrada, segmentação das peças e empacotamento irregular. Recebeu R$ 169 mil em fomento (Programa Gênesis FAPES e Centelha 3 ES).
 
-```
-Encoder serial (10 bytes) → FSM + lead-time calc → 3× câmeras USB
-→ Calibração (OpenCV .npz) → Stitching (Hugin) → Segmentação (SAM3) → S3
-```
+`Python` `OpenCV` `SAM` `Shapely` `Otimização geométrica`
 
-<details>
-<summary>Módulos</summary>
-<br/>
+### Empacotamento irregular de retalhos · Latin.Science 2026
 
-| | Stack | O que faz |
-|--|-------|-----------|
-| **studio-encoder** | pyserial · FastAPI · FSM | Protocolo binário, ressincronização automática, detecção de objetos com compensação de latência por velocidade |
-| **studio-orchestrator** | FastAPI · OpenCV · PyTorch · SQLite · boto3 | Orquestra os estágios; isola ambientes Python incompatíveis (SAM3 usa 3.10, orchestrator usa 3.12) |
-| **studio-stitching** | Pillow · Hugin | Composição panorâmica das 3 imagens calibradas |
-| **studio-segmentacao** | PyTorch · SAM3 · NumPy | Segmentação por prompt textual; commit SHA pinado para reprodutibilidade |
-| **studio-calibracao** | OpenCV | Gera mapas de undistortion (.npz) por câmera |
-| **central_commander** | FastAPI · React 18 · TypeScript · aiomqtt | Dashboard de monitoramento: câmeras, encoders, telemetria, GPIO |
+Avaliação reprodutível de um solver aberto de empacotamento irregular (Sparrow sobre jagua-rs) com restrição de junta de assentamento. 320 execuções em duas instâncias, cerca de 86% de aproveitamento de área e nenhuma sobreposição, com validação geométrica independente.
 
-</details>
+`Python` `Rust (jagua-rs)` `Shapely` `LaTeX`
 
----
+### Digitalização de chapas · Wisestone Tech
 
-### 🛒 VVN — E-commerce
+Sistema de captura, mapeamento e extração de dados de chapas de rochas ornamentais, em uso numa indústria do setor com cerca de 1.500 chapas processadas por mês.
 
-API REST para e-commerce completo. Arquitetura em camadas sem ORM (Raw SQL), com integrações reais de pagamento e CI/CD.
+`Python` `Visão Computacional` `FastAPI` `React`
 
-`FastAPI` `MySQL 8` `Docker` `Jenkins` `JWT` `Google OAuth` `Mercado Pago PIX` `Melhor Envio`
+### QRCheck · Controle de presença do Ifes
 
-> Padrões: Repository · Service Layer · DTO · RBAC · Webhook assíncrono
+Sistema de presença por QR Code para eventos do Ifes, ainda em uso: mais de 1.100 participantes e 100 eventos. Backend FastAPI em camadas com SQL puro, leitura por câmera em tempo real e exportação CSV em streaming.
+
+`FastAPI` `MySQL` `Jinja2` `JavaScript`
+
+### VVN · API de e-commerce
+
+API REST de e-commerce em arquitetura de camadas sem ORM, com integrações reais de pagamento e frete e pipeline de CI/CD.
+
+`FastAPI` `MySQL 8` `JWT` `Google OAuth` `PIX (Mercado Pago)` `Melhor Envio` `Docker` `Jenkins`
 
 ---
 
-### 🌐 Projetos Web · LAIR + IFES
+## Publicações e prêmios
 
-**central_commander** — Dashboard full stack com React 18 + TypeScript, TanStack Query, shadcn/ui, Tailwind CSS e Recharts. WebSocket para atualizações em tempo real; MQTT para comunicação com dispositivos. Build multi-stage Docker com Nginx.
+**Artigos**
 
-**QRCheck** — Sistema de controle de presença por QR Code para eventos do IFES. Backend FastAPI com Jinja2 server-side; scanner de câmera em tempo real via `html5-qrcode`; cookies HTTP-only; exportação CSV via streaming.
+- **PAES, M. A. M.**; SANT'ANNA, R. L.; PIZETTA, I. H. B. *Aproveitamento de Retalhos de Rochas Ornamentais em Mosaicos: Avaliação Reprodutível de um Solver Aberto de Empacotamento Irregular sob Restrição de Junta de Assentamento.* Latin.Science 2026, Latinoware, Foz do Iguaçu. Primeiro autor, apresentado.
+- **PAES, M. A. M.** et al. *Utilização de Visão Computacional e Algoritmos de Otimização para Criação de Mosaicos a Partir de Retalhos de Rochas Ornamentais.* SBAI 2025, São João del-Rei/MG. Primeiro autor, apresentação oral. DOI 10.29327/1842969.1-307
+- BAHIENSE, A. V. et al. *Impactos e Análise do Desempenho Econômico da Indústria de Rochas Ornamentais do Espírito Santo em Tempos de Pandemia.* Revista FOCO, v. 16, n. 7, 2023. DOI 10.54751/revistafoco.v16n7-054
 
----
+**Prêmios**
 
-### 🏭 Esteira — Inspeção Visual Embarcada · LAIR
-
-Pipeline de visão computacional em Raspberry Pi para linha de produção industrial.
-
-`picamera2` `OpenCV` `paho-mqtt` — Dual-camera (OV5647 + IMX477), P-controller de exposição por histograma ROI, fail-safe de superexposição, transmissão MQTT QoS 1 com ACK.
+- Programa Gênesis FAPES 2025: projeto vencedor, origem da Petra Smart
+- Centelha 3 ES: entre as 75 ideias aprovadas de 1.894 inscritas
+- Hackathon Latinoware 2023: equipe vencedora
 
 ---
 
 ## Stack
 
-**Linguagens**
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />
-</p>
-
-**Web & Backend**
-<p>
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" />
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white" />
-</p>
-
-**Dados & DevOps**
-<p>
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" />
 </p>
-<p>
-  <img src="https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white" />
-  <img src="https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=eclipsemosquitto&logoColor=white" />
-  <img src="https://img.shields.io/badge/WebSocket-2E86AB?style=flat-square" />
-</p>
-
-**Visão Computacional & ML**
 <p>
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
   <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
-  <img src="https://img.shields.io/badge/SAM3-0866FF?style=flat-square&logo=meta&logoColor=white" />
-  <img src="https://img.shields.io/badge/Hugin-FF6600?style=flat-square" />
-  <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white" />
+  <img src="https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white" />
+  <img src="https://img.shields.io/badge/MQTT-660066?style=flat-square&logo=eclipsemosquitto&logoColor=white" />
 </p>
 
-**Embarcado & IoT**
-<p>
-  <img src="https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white" />
-  <img src="https://img.shields.io/badge/pyserial-2E86AB?style=flat-square" />
-  <img src="https://img.shields.io/badge/picamera2-A22846?style=flat-square&logo=raspberrypi&logoColor=white" />
-  <img src="https://img.shields.io/badge/gpiod-6A994E?style=flat-square" />
-</p>
 ---
 
 ## Stats
@@ -148,5 +113,3 @@ Pipeline de visão computacional em Raspberry Pi para linha de produção indust
     <img alt="snake" src="https://raw.githubusercontent.com/MarcosAMPaes/MarcosAMPaes/output/github-contribution-grid-snake.svg" />
   </picture>
 </div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%" />
