@@ -9,9 +9,10 @@
 
 ### Sobre mim
 
+- 📊 Foco em **Dados e Machine Learning**, com análise de dados desde a iniciação científica (2022)
 - 🔬 Pesquisador FAPES no **LAIR (Ifes)**: visão computacional e otimização para a indústria de rochas ornamentais
 - 🚀 Fundador da **Petra Smart** e sócio da **Wisestone Tech**
-- 🌱 Estudando Machine Learning e Sistemas Distribuídos
+- 🌱 Estudando Data Science, Machine Learning e Sistemas Distribuídos
 - 🥋 Fora do teclado: jiu-jitsu e jogos competitivos
 - ⚡ Se não sei, aprendo. Se não funciona de um jeito, tento de outro.
 
@@ -29,22 +30,28 @@
 
 - 📄 **SBAI 2025** · Visão computacional e otimização para mosaicos de rochas <sub>(1º autor)</sub>
 - 📄 **Latin.Science 2026** · Solver aberto de empacotamento irregular <sub>(1º autor)</sub>
-- 📄 **Revista FOCO 2023** · Economia do setor de rochas do ES na pandemia <sub>(coautor)</sub>
+- 📄 **Revista FOCO 2023** · Análise de dados econômicos do setor de rochas do ES <sub>(coautor)</sub>
 - 🏆 **Gênesis FAPES 2025** (vencedor) · **Centelha 3 ES** · **Hackathon Latinoware 2023** (vencedor)
 
 ### Stack
 
-<p align="center">
+<p align="center"><b>Dados e Machine Learning</b><br/>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+</p>
+
+<p align="center"><b>Desenvolvimento e infraestrutura</b><br/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" />
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <br/>
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
   <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
