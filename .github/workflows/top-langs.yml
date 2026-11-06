@@ -1,0 +1,102 @@
+name: Top languages card
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/top-langs.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gera generated/top-langs.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request
+          from html import escape
+
+          USER = os.environ.get('GH_USER', 'MarcosAMPaes')
+          HIDE = {'TeX', 'BibTeX Style', 'Makefile'}
+          MAX = 8
+          COLORS = {'Python': '#3572A5', 'JavaScript': '#f1e05a', 'TypeScript': '#3178c6', 'HTML': '#e34c26',
+                    'CSS': '#563d7c', 'SCSS': '#c6538c', 'Shell': '#89e051', 'Dockerfile': '#384d54', 'C++': '#f34b7d',
+                    'C': '#555555', 'Jupyter Notebook': '#DA5B0B', 'Rust': '#dea584', 'Java': '#b07219', 'Go': '#00ADD8',
+                    'PLpgSQL': '#336790', 'TSQL': '#e38c00', 'PowerShell': '#012456', 'Batchfile': '#C1F12E',
+                    'Vue': '#41b883', 'R': '#198CE7', 'CMake': '#DA3434', 'Kotlin': '#A97BFF', 'PHP': '#4F5D95'}
+
+          def fetch():
+              tok = os.environ.get('GITHUB_TOKEN')
+              def get(url):
+                  req = urllib.request.Request(url, headers={'Accept': 'application/vnd.github+json',
+                                                             **({'Authorization': f'Bearer {tok}'} if tok else {})})
+                  return json.load(urllib.request.urlopen(req))
+              data = {}
+              for r in get(f'https://api.github.com/users/{USER}/repos?per_page=100&type=owner'):
+                  data[r['name']] = {'fork': r['fork'], 'langs': get(r['languages_url'])}
+              return data
+
+          data = json.load(open(sys.argv[1])) if len(sys.argv) > 1 else fetch()
+          tot = {}
+          for r in data.values():
+              if r['fork']:
+                  continue
+              for k, v in r['langs'].items():
+                  if k not in HIDE:
+                      tot[k] = tot.get(k, 0) + v
+          items = sorted(tot.items(), key=lambda x: -x[1])[:MAX]
+          s = sum(v for _, v in items) or 1
+          items = [(k, v / s * 100) for k, v in items]
+
+          W, H, PX, BW = 350, 195, 25, 300
+          bar, x = [], PX
+          for i, (k, p) in enumerate(items):
+              w = BW * p / 100
+              bar.append(f'<rect x="{x:.2f}" y="0" width="{w:.2f}" height="8" fill="{COLORS.get(k, "#8b949e")}"/>')
+              x += w
+          leg = []
+          for i, (k, p) in enumerate(items):
+              col, row = i % 2, i // 2
+              lx, ly = PX + col * 150, 104 + row * 28
+              leg.append(f'<g class="it" style="animation-delay:{0.25 + i * 0.08:.2f}s">'
+                         f'<circle cx="{lx + 5}" cy="{ly - 4}" r="5" fill="{COLORS.get(k, "#8b949e")}"/>'
+                         f'<text x="{lx + 16}" y="{ly}" class="lg">{escape(k)} {p:.1f}%</text></g>')
+          svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Linguagens mais usadas">
+          <style>
+          .t{{font:600 18px 'Segoe UI',Ubuntu,'Helvetica Neue',Sans-Serif;fill:#ff6e96;animation:f .6s ease-out both}}
+          .lg{{font:400 13px 'Segoe UI',Ubuntu,'Helvetica Neue',Sans-Serif;fill:#f8f8f2}}
+          .it{{opacity:0;animation:f .4s ease-out forwards}}
+          .bar{{transform-box:fill-box;transform-origin:left;animation:g .9s ease-out both}}
+          @keyframes f{{from{{opacity:0}}to{{opacity:1}}}}
+          @keyframes g{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
+          @media (prefers-reduced-motion:reduce){{.t,.it,.bar{{animation:none;opacity:1}}}}
+          </style>
+          <rect width="{W}" height="{H}" rx="4.5" fill="#282a36"/>
+          <text x="{PX}" y="40" class="t">Linguagens mais usadas</text>
+          <defs><clipPath id="r"><rect x="{PX}" y="0" width="{BW}" height="8" rx="4"/></clipPath></defs>
+          <g transform="translate(0 62)"><g clip-path="url(#r)"><g class="bar">{''.join(bar)}</g></g></g>
+          {''.join(leg)}
+          </svg>
+          '''
+          os.makedirs('generated', exist_ok=True)
+          open('generated/top-langs.svg', 'w').write(svg)
+          print(items)
+
+          PY
+
+      - name: Commit se mudou
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated/top-langs.svg
+          git diff --cached --quiet || (git commit -m "Atualiza card de linguagens [skip ci]" && git push)
