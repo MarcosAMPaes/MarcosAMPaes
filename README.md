@@ -63,7 +63,7 @@
 ### Stats
 
 <div align="center">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MarcosAMPaes&layout=compact&langs_count=8&theme=dracula&hide_border=true" />
+  <img height="160em" src="./generated/top-langs.svg" />
   <img height="160em" src="https://streak-stats.demolab.com?user=MarcosAMPaes&theme=dracula&hide_border=true" />
 </div>
 
