@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="195" viewBox="0 0 350 195" role="img" aria-label="Linguagens mais usadas">
+<style>
+.t{font:600 18px 'Segoe UI',Ubuntu,'Helvetica Neue',Sans-Serif;fill:#ff6e96;animation:f .6s ease-out both}
+.lg{font:400 13px 'Segoe UI',Ubuntu,'Helvetica Neue',Sans-Serif;fill:#f8f8f2}
+.it{opacity:0;animation:f .4s ease-out forwards}
+.bar{transform-box:fill-box;transform-origin:left;animation:g .9s ease-out both}
+@keyframes f{from{opacity:0}to{opacity:1}}
+@keyframes g{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.t,.it,.bar{animation:none;opacity:1}}
+</style>
+<rect width="350" height="195" rx="4.5" fill="#282a36"/>
+<text x="25" y="40" class="t">Linguagens mais usadas</text>
+<defs><clipPath id="r"><rect x="25" y="0" width="300" height="8" rx="4"/></clipPath></defs>
+<g transform="translate(0 62)"><g clip-path="url(#r)"><g class="bar"><rect x="25.00" y="0" width="184.54" height="8" fill="#3572A5"/><rect x="209.54" y="0" width="90.10" height="8" fill="#f1e05a"/><rect x="299.64" y="0" width="18.60" height="8" fill="#89e051"/><rect x="318.23" y="0" width="4.30" height="8" fill="#563d7c"/><rect x="322.53" y="0" width="2.13" height="8" fill="#e34c26"/><rect x="324.66" y="0" width="0.34" height="8" fill="#384d54"/></g></g></g>
+<g class="it" style="animation-delay:0.25s"><circle cx="30" cy="100" r="5" fill="#3572A5"/><text x="41" y="104" class="lg">Python 61.5%</text></g><g class="it" style="animation-delay:0.33s"><circle cx="180" cy="100" r="5" fill="#f1e05a"/><text x="191" y="104" class="lg">JavaScript 30.0%</text></g><g class="it" style="animation-delay:0.41s"><circle cx="30" cy="128" r="5" fill="#89e051"/><text x="41" y="132" class="lg">Shell 6.2%</text></g><g class="it" style="animation-delay:0.49s"><circle cx="180" cy="128" r="5" fill="#563d7c"/><text x="191" y="132" class="lg">CSS 1.4%</text></g><g class="it" style="animation-delay:0.57s"><circle cx="30" cy="156" r="5" fill="#e34c26"/><text x="41" y="160" class="lg">HTML 0.7%</text></g><g class="it" style="animation-delay:0.65s"><circle cx="180" cy="156" r="5" fill="#384d54"/><text x="191" y="160" class="lg">Dockerfile 0.1%</text></g>
+</svg>
