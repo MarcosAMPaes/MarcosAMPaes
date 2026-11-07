@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./marcos-terminal.svg" alt="Marcos Paes: retrato em ASCII e resumo estilo neofetch" width="100%" />
+  <img src="./marcos-terminal.svg" alt="Marcos Paes: Sasuke animado em ASCII e resumo estilo neofetch" width="100%" />
 </p>
 
 <p align="center">
